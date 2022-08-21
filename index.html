@@ -33,7 +33,7 @@
         <div class="w-11/12 lg:w-3/4 mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
                 <div class="col-auto lg:col-span-3">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5" id="player_card">
                         <!-- card -->
                         <div class="border border-gray-400 bg-black text-center rounded-xl flex flex-col gap-4 pb-7">
                             <img src="./img/ronaldo.jpg" alt="player picture" class="rounded-t-2xl">
@@ -75,7 +75,8 @@
                 <div class="flex flex-col gap-5">
                     <div class="bg-black text-white p-8 min-h-[367.77px] rounded-xl">
                         <p class="text-2xl font-semibold text-center pb-5">Selected Five</p>
-                        <ul class="text-gray-400 text-lg font-bold flex flex-col gap-5" id="selected_player"></ul>
+                        <ul class="text-gray-400 text-lg font-bold flex flex-col gap-5" id="selected_player">
+                        </ul>
                     </div>
                     <div class="bg-black text-white p-8 rounded-xl flex flex-col gap-5">
                         <p class="text-2xl font-semibold text-center ">Budget</p>
@@ -106,5 +107,7 @@
             </div>
         </div>
     </main>
+    <script src="./js/common.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
