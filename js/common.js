@@ -13,4 +13,29 @@ function selectBtnHandler(){
     })
 }
 
+// get a value of a single input field
+function getInputFieldValue(id){
+    const inputValue = document.getElementById(id)
+    if(isNaN(parseInt(inputValue.value))){
+        window.alert('Please enter a valid number to the field')
+    }else
+        return parseInt(inputValue.value)
+}
 
+// get the size of selected player
+function getSelectedPlayerSize(){
+    const selectedPlayer = document.querySelector('#selected_player')
+    return selectedPlayer.childElementCount
+}
+
+// player expenses btn handler
+function playerExpensesBtnHandler(){
+    document.getElementById('player_expense_btn').addEventListener('click', (e) => {
+        const perPlayerExpense = getInputFieldValue('per_player')
+        const size = getSelectedPlayerSize()
+        document.getElementById('player_expenses').innerText = perPlayerExpense * size
+    })
+}
+
+
+// calculate total btn handler
