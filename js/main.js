@@ -1,5 +1,3 @@
 selectBtnHandler()
-
 playerExpensesBtnHandler()
-
 calculateTotalBtnHandler()
