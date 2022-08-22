@@ -9,6 +9,8 @@ function selectBtnHandler(){
             const playerName = e.target.previousElementSibling.innerText;
             playerList.innerHTML += `<li>${count} ${playerName}</li>`
             count++
+        }else if(count > 5){
+            window.alert('You cannot select more than 5 players')
         }
     })
 }
@@ -50,7 +52,7 @@ function calculateTotalBtnHandler(){
         const managerBill = getInputFieldValue('manager')
         const coachBill = getInputFieldValue('coach')
         const playerExpenses = document.getElementById('player_expenses').innerText
-        if(managerBill || coachBill === 0){
+        if(managerBill == 0 || coachBill == 0){
             document.getElementById('total').innerText = 0
         }else{
             document.getElementById('total').innerText = managerBill + coachBill + parseInt(playerExpenses)
