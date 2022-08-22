@@ -13,11 +13,12 @@ function selectBtnHandler(){
     })
 }
 
-// get a value of a single input field
+// get the value of a single input field
 function getInputFieldValue(id){
     const inputValue = document.getElementById(id)
     if(isNaN(parseInt(inputValue.value))){
-        window.alert('Please enter a valid number to the field')
+        window.alert('Please enter a valid number to above input field/fields')
+        return 0
     }else
         return parseInt(inputValue.value)
 }
@@ -33,9 +34,26 @@ function playerExpensesBtnHandler(){
     document.getElementById('player_expense_btn').addEventListener('click', (e) => {
         const perPlayerExpense = getInputFieldValue('per_player')
         const size = getSelectedPlayerSize()
-        document.getElementById('player_expenses').innerText = perPlayerExpense * size
+        if(size === 0){
+            window.alert('Please select some player to build your team.')
+        }else{
+            const playerExpense = perPlayerExpense * size
+            document.getElementById('player_expenses').innerText = playerExpense
+        }
     })
 }
 
 
 // calculate total btn handler
+function calculateTotalBtnHandler(){
+    document.getElementById('total_calculate_btn').addEventListener('click', (e) => {
+        const managerBill = getInputFieldValue('manager')
+        const coachBill = getInputFieldValue('coach')
+        const playerExpenses = document.getElementById('player_expenses').innerText
+        if(managerBill || coachBill === 0){
+            document.getElementById('total').innerText = 0
+        }else{
+            document.getElementById('total').innerText = managerBill + coachBill + parseInt(playerExpenses)
+        }
+    })
+}

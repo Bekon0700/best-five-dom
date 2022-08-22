@@ -1,3 +1,5 @@
 selectBtnHandler()
 
 playerExpensesBtnHandler()
+
+calculateTotalBtnHandler()
